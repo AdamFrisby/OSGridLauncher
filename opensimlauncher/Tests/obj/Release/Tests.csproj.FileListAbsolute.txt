@@ -1,0 +1,9 @@
+D:\Work\DTL\Developers\AdamFrisby\OSGridLauncher\Tests\bin\Release\Tests.exe
+D:\Work\DTL\Developers\AdamFrisby\OSGridLauncher\Tests\bin\Release\Tests.pdb
+D:\Work\DTL\Developers\AdamFrisby\OSGridLauncher\Tests\bin\Release\OSGridLauncher.exe
+D:\Work\DTL\Developers\AdamFrisby\OSGridLauncher\Tests\bin\Release\ICSharpCode.SharpZipLib.dll
+D:\Work\DTL\Developers\AdamFrisby\OSGridLauncher\Tests\bin\Release\Mono.Nat.dll
+D:\Work\DTL\Developers\AdamFrisby\OSGridLauncher\Tests\bin\Release\OSGridLauncher.pdb
+D:\Work\DTL\Developers\AdamFrisby\OSGridLauncher\Tests\obj\Release\ResolveAssemblyReference.cache
+D:\Work\DTL\Developers\AdamFrisby\OSGridLauncher\Tests\obj\Release\Tests.exe
+D:\Work\DTL\Developers\AdamFrisby\OSGridLauncher\Tests\obj\Release\Tests.pdb

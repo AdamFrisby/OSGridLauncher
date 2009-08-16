@@ -1,0 +1,286 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer>
+      <setting name="UsedSolutionBuilderID">0</setting>
+    </integer>
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">False</setting>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:Program.cs" caret="1277" scrollPosition="0|0" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:webfetch.cs" caret="1412" scrollPosition="0|0" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:MonoNatForward.cs" caret="2273" scrollPosition="0|15" />
+      <File id="B01E6498-3C2A-4810-B6E0-E20A1C9BB4A1/f:Program.cs" caret="68" scrollPosition="0|0" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:mainFrm.cs" caret="1281" scrollPosition="0|0" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:OpenSimConfigurator.cs" caret="0" scrollPosition="0|0" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:OpenSimConfigurator.cs" caret="9558" scrollPosition="0|192" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:OpenSimConfigurator.cs" caret="3511" scrollPosition="0|120" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:MonoNatForward.cs" caret="3071" scrollPosition="0|0" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:MonoNatForward.cs" caret="3061" scrollPosition="0|0" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:MonoNatForward.cs" caret="2933" scrollPosition="0|0" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:MonoNatForward.cs" caret="3199" scrollPosition="0|0" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:MonoNatForward.cs" caret="3072" scrollPosition="0|0" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:MonoNatForward.cs" caret="2634" scrollPosition="0|0" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:OpenSimConfigurator.cs" caret="1537" scrollPosition="0|9" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:OpenSimConfigurator.cs" caret="1668" scrollPosition="0|24" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:OpenSimConfigurator.cs" caret="2217" scrollPosition="0|24" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:OpenSimConfigurator.cs" caret="2390" scrollPosition="0|24" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:OpenSimConfigurator.cs" caret="13050" scrollPosition="0|273" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:OpenSimConfigurator.cs" caret="2058" scrollPosition="0|28" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:OpenSimConfigurator.cs" caret="7331" scrollPosition="0|91" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:OpenSimConfigurator.cs" caret="5178" scrollPosition="0|94" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:OpenSimConfigurator.cs" caret="14545" scrollPosition="0|307" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:MonoNatForward.cs" caret="1277" scrollPosition="0|0" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:Program.cs" caret="1277" scrollPosition="0|0" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:webfetch.cs" caret="1279" scrollPosition="0|0" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:OpenSimConfigurator.cs" caret="14365" scrollPosition="0|297" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:OpenSimConfigurator.cs" caret="15020" scrollPosition="0|297" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:MonoNatForward.cs" caret="2077" scrollPosition="0|0" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:OpenSimConfigurator.cs" caret="7885" scrollPosition="0|123" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:OpenSimConfigurator.cs" caret="8732" scrollPosition="0|123" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:OpenSimConfigurator.cs" caret="8353" scrollPosition="0|123" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:OpenSimConfigurator.cs" caret="8322" scrollPosition="0|123" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:mainFrm.cs" caret="1917" scrollPosition="0|0" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:mainFrm.cs" caret="0" scrollPosition="0|0" />
+      <File id="68DFF3B4-00E6-4B7B-ACB6-EBD18343C206/f:mainFrm.cs" caret="1281" scrollPosition="0|0" />
+    </RecentEdits>
+  </RecentFiles>
+  <UnitTestRunner>
+    <CustomStartDirectory>
+    </CustomStartDirectory>
+    <UseShadowCopy>True</UseShadowCopy>
+    <UseCustomFolder>False</UseCustomFolder>
+    <EnableUnitTesting>True</EnableUnitTesting>
+    <Providers />
+  </UnitTestRunner>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="void" priority="10" />
+      <Item value="protected" priority="0" />
+      <Item value="new" priority="16" />
+      <Item value="IPAddress" priority="5" />
+      <Item value="using" priority="3" />
+      <Item value="NATUPNPLib" priority="0" />
+      <Item value="bool" priority="3" />
+      <Item value="return" priority="10" />
+      <Item value="false" priority="3" />
+      <Item value="int" priority="3" />
+      <Item value="SocketPermissionAttribute" priority="0" />
+      <Item value="TcpListener" priority="1" />
+      <Item value="listener" priority="2" />
+      <Item value="testPort" priority="7" />
+      <Item value="private" priority="12" />
+      <Item value="ThreadStaticAttribute" priority="2" />
+      <Item value="Thread" priority="0" />
+      <Item value="TestNetwork_Listen" priority="0" />
+      <Item value="listenThread" priority="0" />
+      <Item value="TestNetwork_Accepted" priority="1" />
+      <Item value="true" priority="4" />
+      <Item value="TcpClient" priority="2" />
+      <Item value="testClient" priority="3" />
+      <Item value="IPEndPoint" priority="0" />
+      <Item value="try" priority="3" />
+      <Item value="catch" priority="6" />
+      <Item value="SocketException" priority="2" />
+      <Item value="router" priority="8" />
+      <Item value="if" priority="15" />
+      <Item value="a" priority="2" />
+      <Item value="ToString" priority="0" />
+      <Item value="i" priority="1" />
+      <Item value="null" priority="1" />
+      <Item value="UPnPNATClass" priority="1" />
+      <Item value="uPnP" priority="2" />
+      <Item value="GetLocalIP" priority="1" />
+      <Item value="finally" priority="0" />
+      <Item value="namespace" priority="0" />
+      <Item value="OSGridLauncher" priority="0" />
+      <Item value="static" priority="0" />
+      <Item value="string" priority="7" />
+      <Item value="sb" priority="0" />
+      <Item value="WebFetch" priority="0" />
+      <Item value="GetInternetIP" priority="0" />
+      <Item value="Console" priority="3" />
+      <Item value="OpenSimConfigurator" priority="1" />
+      <Item value="processStartInfo" priority="6" />
+      <Item value="ProcessStartInfo" priority="0" />
+      <Item value="FileNotFoundException" priority="0" />
+      <Item value="TestNetwork_Listener" priority="0" />
+      <Item value="NullReferenceException" priority="0" />
+      <Item value="MessageBoxIcon" priority="0" />
+      <Item value="Environment" priority="3" />
+      <Item value="ProtocolType" priority="7" />
+      <Item value="useWinNat" priority="1" />
+      <Item value="pt" priority="2" />
+      <Item value="else" priority="2" />
+      <Item value="NAT" priority="4" />
+      <Item value="port" priority="6" />
+      <Item value="ForwardPort" priority="3" />
+      <Item value="DefowardPort" priority="0" />
+      <Item value="WebException" priority="0" />
+      <Item value="MessageBox" priority="2" />
+      <Item value="tmp" priority="0" />
+      <Item value="FastZipConfirm" priority="1" />
+      <Item value="OpenSimDir" priority="5" />
+      <Item value="Path" priority="4" />
+      <Item value="OpenSimBinDir" priority="4" />
+      <Item value="PrepareForUpgrade" priority="0" />
+      <Item value="Directory" priority="2" />
+      <Item value="File" priority="6" />
+      <Item value="foreach" priority="1" />
+      <Item value="file" priority="3" />
+      <Item value="public" priority="2" />
+      <Item value="SetupDirs" priority="0" />
+      <Item value="regionDir" priority="2" />
+      <Item value="SetLatestVersion" priority="0" />
+      <Item value="Url" priority="0" />
+      <Item value="HasLatestVesion" priority="0" />
+      <Item value="Mono.Upnp" priority="0" />
+      <Item value="Mono" priority="2" />
+      <Item value="Upnp" priority="1" />
+      <Item value="Client" priority="0" />
+      <Item value="Mono.Nat" priority="1" />
+      <Item value="Nat" priority="1" />
+      <Item value="Mapping" priority="4" />
+      <Item value="Protocol" priority="5" />
+      <Item value="n" priority="0" />
+      <Item value="NatUtility" priority="5" />
+      <Item value="UpnpNatDevice" priority="1" />
+      <Item value="p" priority="0" />
+      <Item value="e" priority="4" />
+      <Item value="INatDevice" priority="0" />
+      <Item value="protocol" priority="4" />
+      <Item value="mapping" priority="2" />
+      <Item value="Start" priority="0" />
+      <Item value="MonoNatForward" priority="1" />
+      <Item value="MappingException" priority="0" />
+      <Item value="System" priority="0" />
+      <Item value="ComponentModel" priority="0" />
+      <Item value="Win32Exception" priority="0" />
+      <Item value="Message" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Net.IPAddress">
+      <Item value="Parse" priority="2" />
+      <Item value="Any" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.Sockets.TcpListener">
+      <Item value="AcceptTcpClient" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Threading.Thread">
+      <Item value="Start" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.Sockets.TcpClient">
+      <Item value="Connect" priority="0" />
+      <Item value="Close" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="StartsWith" priority="0" />
+      <Item value="EndsWith" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NATUPNPLib.UPnPNATClass">
+      <Item value="StaticPortMappingCollection" priority="2" />
+      <Item value="NATEventManager" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NATUPNPLib.IStaticPortMappingCollection">
+      <Item value="Add" priority="0" />
+      <Item value="Remove" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.IPAddress">
+      <Item value="ToString" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.StringBuilder">
+      <Item value="ToString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@OSGridLauncher.WebFetch">
+      <Item value="Fetch" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="ReadLine" priority="0" />
+      <Item value="WriteLine" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:OSGridLauncher.OpenSimConfigurator">
+      <Item value="TestNetwork" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Diagnostics.ProcessStartInfo">
+      <Item value="WorkingDirectory" priority="1" />
+      <Item value="FileName" priority="1" />
+      <Item value="Arguments" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.MessageBox">
+      <Item value="Show" priority="6" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Environment">
+      <Item value="Exit" priority="0" />
+      <Item value="CurrentDirectory" priority="1" />
+      <Item value="WorkingSet" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Net.Sockets.ProtocolType">
+      <Item value="Tcp" priority="4" />
+      <Item value="Udp" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@OSGridLauncher.NAT">
+      <Item value="ForwardPort" priority="0" />
+      <Item value="DeleteForwardingRule" priority="0" />
+      <Item value="GetExternalIP" priority="0" />
+      <Item value="Discover" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ICSharpCode.SharpZipLib.Zip.FastZip">
+      <Item value="ExtractZip" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@ICSharpCode.SharpZipLib.Zip.FastZip+Overwrite">
+      <Item value="Always" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.Path">
+      <Item value="Combine" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.Directory">
+      <Item value="Exists" priority="1" />
+      <Item value="GetFiles" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.File">
+      <Item value="Delete" priority="1" />
+      <Item value="Exists" priority="1" />
+      <Item value="ReadAllText" priority="0" />
+      <Item value="WriteAllText" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Mono.Nat.Protocol">
+      <Item value="Tcp" priority="2" />
+      <Item value="Udp" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Mono.Nat.NatUtility">
+      <Item value="DeviceFound" priority="0" />
+      <Item value="DeviceLost" priority="0" />
+      <Item value="StartDiscovery" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Mono.Nat.DeviceEventArgs">
+      <Item value="Device" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Mono.Nat.INatDevice">
+      <Item value="BeginCreatePortMap" priority="0" />
+      <Item value="CreatePortMap" priority="0" />
+      <Item value="DeletePortMap" priority="1" />
+      <Item value="GetAllMappings" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Mono.Nat.Mapping">
+      <Item value="PublicPort" priority="0" />
+      <Item value="Protocol" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:OSGridLauncher.MonoNatForward">
+      <Item value="Map" priority="0" />
+      <Item value="Unmap" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Mono.Nat.MappingException">
+      <Item value="Message" priority="1" />
+      <Item value="ToString" priority="0" />
+      <Item value="ErrorText" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>
