@@ -40,17 +40,17 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxY = new System.Windows.Forms.TextBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.textBoxX = new System.Windows.Forms.TextBox();
+            this.checkBoxAutoposition = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.checkBoxAutoposition = new System.Windows.Forms.CheckBox();
-            this.textBoxX = new System.Windows.Forms.TextBox();
-            this.textBoxY = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblVersion = new System.Windows.Forms.Label();
             this.sponsorButton = new System.Windows.Forms.PictureBox();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -157,15 +157,35 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Configuration Information";
             // 
-            // label3
+            // label4
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(13, 37);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(203, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "May be up to 64 alphanumeric characters";
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label4.Location = new System.Drawing.Point(13, 114);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(133, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Your OSgrid.org Username";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(400, 78);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(10, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = ",";
+            // 
+            // textBoxY
+            // 
+            this.textBoxY.Location = new System.Drawing.Point(416, 71);
+            this.textBoxY.Name = "textBoxY";
+            this.textBoxY.ReadOnly = true;
+            this.textBoxY.Size = new System.Drawing.Size(76, 20);
+            this.textBoxY.TabIndex = 13;
+            this.textBoxY.TextChanged += new System.EventHandler(this.textBoxY_TextChanged);
+            this.textBoxY.Validated += new System.EventHandler(this.textBoxY_Validated);
+            this.textBoxY.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxY_Validating);
             // 
             // linkLabel1
             // 
@@ -178,20 +198,33 @@
             this.linkLabel1.Text = "Register a new account?";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // label4
+            // textBoxX
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(13, 114);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(133, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Your OSgrid.org Username";
+            this.textBoxX.Location = new System.Drawing.Point(294, 70);
+            this.textBoxX.Name = "textBoxX";
+            this.textBoxX.ReadOnly = true;
+            this.textBoxX.Size = new System.Drawing.Size(83, 20);
+            this.textBoxX.TabIndex = 12;
+            this.textBoxX.Validated += new System.EventHandler(this.textBoxX_Validated);
+            this.textBoxX.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxX_Validating);
+            // 
+            // checkBoxAutoposition
+            // 
+            this.checkBoxAutoposition.AutoSize = true;
+            this.checkBoxAutoposition.Checked = true;
+            this.checkBoxAutoposition.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxAutoposition.Location = new System.Drawing.Point(227, 72);
+            this.checkBoxAutoposition.Name = "checkBoxAutoposition";
+            this.checkBoxAutoposition.Size = new System.Drawing.Size(48, 17);
+            this.checkBoxAutoposition.TabIndex = 11;
+            this.checkBoxAutoposition.Text = "Auto";
+            this.checkBoxAutoposition.UseVisualStyleBackColor = true;
+            this.checkBoxAutoposition.CheckedChanged += new System.EventHandler(this.checkBoxAutoposition_CheckedChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.label5.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label5.Location = new System.Drawing.Point(13, 74);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(144, 13);
@@ -207,63 +240,30 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "Position";
             // 
-            // checkBoxAutoposition
+            // label3
             // 
-            this.checkBoxAutoposition.AutoSize = true;
-            this.checkBoxAutoposition.Checked = true;
-            this.checkBoxAutoposition.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxAutoposition.Location = new System.Drawing.Point(227, 72);
-            this.checkBoxAutoposition.Name = "checkBoxAutoposition";
-            this.checkBoxAutoposition.Size = new System.Drawing.Size(48, 17);
-            this.checkBoxAutoposition.TabIndex = 11;
-            this.checkBoxAutoposition.Text = "Auto";
-            this.checkBoxAutoposition.UseVisualStyleBackColor = true;
-            this.checkBoxAutoposition.CheckedChanged += new System.EventHandler(this.checkBoxAutoposition_CheckedChanged);
-            // 
-            // textBoxX
-            // 
-            this.textBoxX.Location = new System.Drawing.Point(294, 70);
-            this.textBoxX.Name = "textBoxX";
-            this.textBoxX.ReadOnly = true;
-            this.textBoxX.Size = new System.Drawing.Size(83, 20);
-            this.textBoxX.TabIndex = 12;
-            this.textBoxX.Validated += new System.EventHandler(this.textBoxX_Validated);
-            this.textBoxX.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxX_Validating);
-            // 
-            // textBoxY
-            // 
-            this.textBoxY.Location = new System.Drawing.Point(416, 71);
-            this.textBoxY.Name = "textBoxY";
-            this.textBoxY.ReadOnly = true;
-            this.textBoxY.Size = new System.Drawing.Size(76, 20);
-            this.textBoxY.TabIndex = 13;
-            this.textBoxY.TextChanged += new System.EventHandler(this.textBoxY_TextChanged);
-            this.textBoxY.Validated += new System.EventHandler(this.textBoxY_Validated);
-            this.textBoxY.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxY_Validating);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(400, 78);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(10, 13);
-            this.label7.TabIndex = 14;
-            this.label7.Text = ",";
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label3.Location = new System.Drawing.Point(13, 37);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(203, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "May be up to 64 alphanumeric characters";
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // label8
+            // lblVersion
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(267, 20);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(31, 13);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "r0.20";
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.BackColor = System.Drawing.Color.Transparent;
+            this.lblVersion.ForeColor = System.Drawing.Color.White;
+            this.lblVersion.Location = new System.Drawing.Point(267, 20);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(31, 13);
+            this.lblVersion.TabIndex = 10;
+            this.lblVersion.Text = "r0.22";
             // 
             // sponsorButton
             // 
@@ -285,7 +285,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(549, 264);
             this.Controls.Add(this.sponsorButton);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnStart);
@@ -329,7 +329,7 @@
         private System.Windows.Forms.TextBox textBoxX;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.PictureBox sponsorButton;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblVersion;
     }
 }
 

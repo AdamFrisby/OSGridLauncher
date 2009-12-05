@@ -25,6 +25,8 @@
 //
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace OSGridLauncher
@@ -37,6 +39,11 @@ namespace OSGridLauncher
         [STAThread]
         static void Main()
         {
+            // Mono botches this up when launched via a Shell (eg Konq.)
+            if (Environment.OSVersion.Platform == PlatformID.Unix)
+                Environment.CurrentDirectory =
+                    Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetName().CodeBase).Replace("file:", "");
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new mainFrm());

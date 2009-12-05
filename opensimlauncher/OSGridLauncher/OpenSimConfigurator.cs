@@ -31,9 +31,9 @@ using System.Net.Sockets;
 
 using System.Threading;
 using System.Windows.Forms;
-using ICSharpCode.SharpZipLib.Zip;
 //using NATUPNPLib;
 //using Mono.Upnp;
+using Ionic.Zip;
 using Mono.Nat;
 
 namespace OSGridLauncher
@@ -168,11 +168,24 @@ namespace OSGridLauncher
 
             processStartInfo.WorkingDirectory = OpenSimBinDir;
 
+            const bool runWithMono = true; // Testing r21
+
             int p = (int) Environment.OSVersion.Platform;
-            if ((p == 4) || (p == 6)) // On either Linux or OSX
+            if (runWithMono && ((p == 4) || (p == 6) || (p == (int)PlatformID.Unix))) // On either Linux or OSX
             {
-                processStartInfo.FileName = "mono";
-                processStartInfo.Arguments = "OpenSim.32BitLaunch.exe";
+                const bool monoStartsConsoleAppsSilently = true;
+
+                if (monoStartsConsoleAppsSilently) // Mono is retarded at times.
+                {
+                    MessageBox.Show(
+                        "Mono does not appear to start Console applications correctly within a terminal, and instead starts them silently.\n\nTo launch your region process, run the following commands on a terminal:\n\n cd " + OpenSimBinDir + "\nmono OpenSim.32BitLaunch.exe",
+                        "Unable to automatically start OpenSim");
+                }
+                else
+                {
+                    processStartInfo.FileName = "mono";
+                    processStartInfo.Arguments = "OpenSim.32BitLaunch.exe";
+                }
             }
             else
             {
@@ -263,14 +276,24 @@ namespace OSGridLauncher
         {
             PrepareForUpgrade();
 
-            FastZip tmp = new FastZip();
-            tmp.ExtractZip("osg_latest.zip", OpenSimDir, FastZip.Overwrite.Always, FastZipConfirm, "", "", true);
-        }
+            using (ZipFile zip = ZipFile.Read("osg_latest.zip"))
+            {
+                int total = zip.Count;
+                int item = 0;
+                foreach (ZipEntry e in zip)
+                {
+                    // % Completed Bar
+                    item++;
+                    const int min = 61;
+                    const int max = 69;
+                    double percent = item/(double) total;
+                    int val = (int)((double)(max - min) * percent) + min;
+                    SetStatus(val, "Unpacking " + e.FileName + "...");
+                    // % Completed Bar End
 
-        private static bool FastZipConfirm(string filename)
-        {
-            SetStatus(70, "Unpacking " + filename + "...");
-            return true;
+                    e.Extract(OpenSimDir, ExtractExistingFileAction.OverwriteSilently);
+                }
+            }
         }
 
         private void PrepareForUpgrade()
@@ -284,6 +307,7 @@ namespace OSGridLauncher
                 {
                     if (file.EndsWith(".xml") || file.EndsWith(".exe") || file.EndsWith(".pdb") || file.EndsWith(".dll"))
                     {
+                        SetStatus(75, "Removing old '" + file + "'.");
                         File.Delete(file);
                     }
                 }
@@ -292,7 +316,7 @@ namespace OSGridLauncher
 
         private void WriteRegionConfig(string regionName, string fname, string lname, bool pos, int x, int y)
         {
-            string regionDir = Path.Combine(OpenSimBinDir, "regions");
+            string regionDir = Path.Combine(OpenSimBinDir, "Regions"); // Case sensitive: Bug Linux/OSX Regions Autoconfig Fails
 
             // Make region dir
             if (!Directory.Exists(regionDir))

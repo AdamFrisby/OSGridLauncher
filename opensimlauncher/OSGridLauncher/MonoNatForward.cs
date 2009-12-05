@@ -47,13 +47,12 @@ namespace OSGridLauncher
             {
                 router.CreatePortMap(new Mapping(protocol, port, port));
             }
-            catch (MappingException e)
+            catch (MappingException)
             {
                 if (port != 11789)
                     MessageBox.Show("Network autoconfiguration failed while trying to automatically forward port " +
                                     port + " (" + (protocol == Protocol.Tcp ? "TCP" : "UDP") +
                                     "). If you have manually forwarded this port, you can ignore this error.");
-//                MessageBox.Show("MappingError:" + e.ErrorText + "/" + e.Message + "(" + e.ToString() + ")");
             }
         }
 
