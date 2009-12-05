@@ -1,9 +1,9 @@
 ﻿// Author:
 //   Adam Frisby <adam@deepthink.com.au>
 //
-// Copyright (C) 2009 OSGrid, Inc. A Californian non-profit 
-//                               public benefit corporation.
-//
+// Copyright (C) 2009 OSGrid, Inc.                                  (r01-r19)
+// Copyright (C) 2009-2010 DeepThink Pty Ltd - www.deepthink.com.au (r20+)
+//                               
 // Permission is hereby granted, free of charge, to any person obtaining
 // a copy of this software and associated documentation files (the
 // "Software"), to deal in the Software without restriction, including
@@ -40,7 +40,7 @@ namespace OSGridLauncher
 {
     public class OpenSimConfigurator
     {
-        MonoNatForward router = new MonoNatForward();
+        readonly MonoNatForward router = new MonoNatForward();
 
         public OpenSimConfigurator()
         {
@@ -66,14 +66,24 @@ namespace OSGridLauncher
             router.Unmap(pt == ProtocolType.Tcp ? Protocol.Tcp : Protocol.Udp, port);
         }
 
-        private void SetStatus(int val, string text, ProgressBar pb, Label status)
+        private static ProgressBar _pb;
+        private static ToolStripItem _status;
+        private static StatusStrip _statusStrip;
+
+        private static void SetStatus(int percent, string text)
         {
-            pb.Invoke((MethodInvoker) delegate()
+            SetStatus(percent, text, _pb, _status, _statusStrip);
+        }
+
+        private static void SetStatus(int val, string text, ProgressBar pb, ToolStripItem status, Control statusStrip)
+        {
+            pb.Invoke((MethodInvoker) delegate
                                           {
                                               pb.Value = val;
                                               //status.Text = text;
                                           });
-            status.Invoke((MethodInvoker) delegate()
+
+            statusStrip.Invoke((MethodInvoker)delegate
                                               {
                                                   //pb.Value = val;
                                                   status.Text = text;
@@ -81,35 +91,36 @@ namespace OSGridLauncher
         }
 
         public void ConfigAndLaunch(string regionName, string avFname, string avLname,
-            ProgressBar pb, Label status)
+            ProgressBar pb, ToolStripStatusLabel status, StatusStrip statusStrip, bool autoPosition, int posX, int posY)
         {
+            _pb = pb;
+            _status = status;
+            _statusStrip = statusStrip;
+
             Thread tmp = new Thread(delegate()
                                         {
                                             try
                                             {
                                                 if (Directory.Exists(OpenSimDir) && HasLatestVesion())
                                                 {
-                                                    SetStatus(80, "Setting up port forwards",
-                                                              pb, status);
+                                                    SetStatus(80, "Setting up port forwards");
                                                     SetupPortForwarding();
 
-                                                    SetStatus(90, "Launching...",
-                                                              pb, status);
+                                                    SetStatus(90, "Launching...");
                                                     Run();
 
-                                                    SetStatus(100, "Running.",
-                                                              pb, status);
+                                                    SetStatus(100, "Running.");
 
                                                     Thread.Sleep(15000);
                                                     Environment.Exit(0);
                                                 }
                                                 else
                                                 {
-                                                    SetStatus(10, "Testing network...",
-                                                              pb, status);
+                                                    SetStatus(10, "Testing network...");
 
                                                     if (!TestNetwork())
                                                     {
+                                                        SetStatus(10, "Test Failed...");
                                                         MessageBox.Show(
                                                             "We were not able to successfully connect to your network device from within.\n\n" +
                                                             "This is commonly caused by either you having UPnP disabled, your router not supporting NAT Loopback, or a network misconfiguration.\n\n" +
@@ -119,29 +130,24 @@ namespace OSGridLauncher
 
                                                     if (!File.Exists("osg_latest.zip"))
                                                     {
-                                                        SetStatus(20, "Downloading (may take a while)...",
-                                                                  pb, status);
+                                                        SetStatus(20, "Downloading...");
                                                         Download();
                                                     }
 
-                                                    SetStatus(60, "Unpacking...",
-                                                              pb, status);
+                                                    SetStatus(60, "Unpacking...");
                                                     Unpack();
 
-                                                    SetStatus(70, "Writing Configuration...",
-                                                              pb, status);
-                                                    WriteRegionConfig(regionName, avFname, avLname);
+                                                    SetStatus(70, "Writing Configuration...");
+                                                    WriteRegionConfig(regionName, avFname, avLname, autoPosition, posX,
+                                                                      posY);
 
-                                                    SetStatus(80, "Setting up port forwards",
-                                                              pb, status);
+                                                    SetStatus(80, "Setting up port forwards");
                                                     SetupPortForwarding();
 
-                                                    SetStatus(90, "Launching...",
-                                                              pb, status);
+                                                    SetStatus(90, "Launching...");
                                                     Run();
 
-                                                    SetStatus(100, "Running.",
-                                                              pb, status);
+                                                    SetStatus(100, "Running. Will exit launcher in 15s.");
 
                                                     Thread.Sleep(15000);
                                                     Environment.Exit(0);
@@ -177,14 +183,14 @@ namespace OSGridLauncher
             {
                 Process.Start(processStartInfo);
             }
-            catch (System.ComponentModel.Win32Exception e)
+            catch (System.ComponentModel.Win32Exception)
             {
                 MessageBox.Show("Unable to start " + processStartInfo.FileName + " in " +
                                 processStartInfo.WorkingDirectory + ", do both exist?");
             }
         }
 
-        private bool HasLatestVesion()
+        private static bool HasLatestVesion()
         {
             if(!File.Exists("config.ver"))
                 return false;
@@ -194,22 +200,63 @@ namespace OSGridLauncher
             return File.ReadAllText("config.ver") == Url;
         }
 
-        private void SetLatestVersion(string url)
+        private static void SetLatestVersion(string url)
         {
             File.WriteAllText("config.ver", url);
         }
 
+        private bool _done;
+
         private void Download()
         {
+            _done = false;
+
             // Cleanup existing
             if (File.Exists("osg_latest.zip"))
                 File.Delete("osg_latest.zip");
 
             string Url = WebFetch.Fetch("http://www.osgrid.org/elgg/pg/utilities/autowin");
             WebClient wc = new WebClient();
-            wc.DownloadFile(Url,"osg_latest.zip");
+            wc.DownloadProgressChanged += wc_DownloadProgressChanged;
+            wc.DownloadFileCompleted += wc_DownloadFileCompleted;
+            wc.DownloadFileAsync(new Uri(Url), "osg_latest.zip");
+            
+            while(_done == false)
+            {
+                Thread.Sleep(250);
+            }
 
             SetLatestVersion(Url);
+        }
+
+        void wc_DownloadFileCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            SetStatus(59, "Download Completed...");
+            _done = true;
+        }
+
+        private int lastPercent = 0;
+
+        void wc_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        {
+            const int min = 21;
+            const int max = 59;
+
+            if (e.TotalBytesToReceive != 0)
+            {
+                double percent = e.BytesReceived/(double) e.TotalBytesToReceive;
+                int val = (int) ((double) (max - min)*percent) + min;
+
+                if (lastPercent != val)
+                {
+                    lastPercent = val;
+                    SetStatus(lastPercent, "Downloading... " + (int) (percent*100) + "% Completed.");
+                }
+            }
+            else
+            {
+                SetStatus(20, "Downloading... " + (e.BytesReceived/1024) + "KiB Recieved.");
+            }
         }
 
         private void Unpack()
@@ -220,8 +267,9 @@ namespace OSGridLauncher
             tmp.ExtractZip("osg_latest.zip", OpenSimDir, FastZip.Overwrite.Always, FastZipConfirm, "", "", true);
         }
 
-        private bool FastZipConfirm(string filename)
+        private static bool FastZipConfirm(string filename)
         {
+            SetStatus(70, "Unpacking " + filename + "...");
             return true;
         }
 
@@ -229,6 +277,7 @@ namespace OSGridLauncher
         {
             if (Directory.Exists(OpenSimDir) && Directory.Exists(OpenSimBinDir))
             {
+                SetStatus(70, "Preparing for upgrade...");
                 string[] files = Directory.GetFiles(OpenSimBinDir);
 
                 foreach (string file in files)
@@ -241,7 +290,7 @@ namespace OSGridLauncher
             }
         }
 
-        private void WriteRegionConfig(string regionName, string fname, string lname)
+        private void WriteRegionConfig(string regionName, string fname, string lname, bool pos, int x, int y)
         {
             string regionDir = Path.Combine(OpenSimBinDir, "regions");
 
@@ -254,7 +303,12 @@ namespace OSGridLauncher
             if(File.Exists(fn))
                 return; // Already configured.
 
-            string coords = WebFetch.Fetch("http://www.osgrid.org/elgg/pg/utilities/autocoord");
+            string coords;
+
+            if (pos)
+                coords = WebFetch.Fetch("http://www.osgrid.org/elgg/pg/utilities/autocoord");
+            else
+                coords = String.Format("{0},{1}", x, y);
 
             string UUID = Guid.NewGuid().ToString();
             string Location = coords;
@@ -277,11 +331,13 @@ namespace OSGridLauncher
 
         private void SetupPortForwarding()
         {
+            SetStatus(83,"Port Forwarding 9000/TCP via UPnP...");
             ForwardPort(9000,ProtocolType.Tcp);
+            SetStatus(87, "Port Forwarding 9000/UDP via UPnP...");
             ForwardPort(9000, ProtocolType.Udp);
         }
 
-        private IPAddress GetInternetIP()
+        private static IPAddress GetInternetIP()
         {
             string IP = WebFetch.Fetch("http://www.osgrid.org/elgg/pg/utilities/autoip");
             return IPAddress.Parse(IP);
@@ -308,7 +364,7 @@ namespace OSGridLauncher
             return a[0];
         }
 
-        private bool TestNetwork_Accepted = false;
+        private bool TestNetwork_Accepted;
         private TcpListener TestNetwork_Listener; 
 
         public bool TestNetwork()
@@ -347,7 +403,7 @@ namespace OSGridLauncher
 
                 return TestNetwork_Accepted;
             }
-            catch (SocketException e)
+            catch (SocketException)
             {
                 //MessageBox.Show("SocketError: " + e);
                 return false;

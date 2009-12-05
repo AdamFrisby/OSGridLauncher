@@ -1,9 +1,9 @@
 ﻿// Author:
 //   Adam Frisby <adam@deepthink.com.au>
 //
-// Copyright (C) 2009 OSGrid, Inc. A Californian non-profit 
-//                               public benefit corporation.
-//
+// Copyright (C) 2009 OSGrid, Inc.                                  (r01-r19)
+// Copyright (C) 2009-2010 DeepThink Pty Ltd - www.deepthink.com.au (r20+)
+//                               
 // Permission is hereby granted, free of charge, to any person obtaining
 // a copy of this software and associated documentation files (the
 // "Software"), to deal in the Software without restriction, including
@@ -22,6 +22,7 @@
 // LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 // OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+//
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;

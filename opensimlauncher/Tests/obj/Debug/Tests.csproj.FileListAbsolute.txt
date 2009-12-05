@@ -7,3 +7,12 @@ D:\work\DTL\Developers\AdamFrisby\OSGridLauncher\Tests\obj\Debug\Tests.exe
 D:\work\DTL\Developers\AdamFrisby\OSGridLauncher\Tests\obj\Debug\Tests.pdb
 D:\work\DTL\Developers\AdamFrisby\OSGridLauncher\Tests\bin\Debug\ICSharpCode.SharpZipLib.dll
 D:\Work\DTL\Developers\AdamFrisby\OSGridLauncher\Tests\bin\Debug\Mono.Nat.dll
+D:\work\OSGL\opensimlauncher\Tests\bin\Debug\Tests.exe
+D:\work\OSGL\opensimlauncher\Tests\bin\Debug\Tests.pdb
+D:\work\OSGL\opensimlauncher\Tests\bin\Debug\OSGridLauncher.exe
+D:\work\OSGL\opensimlauncher\Tests\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\work\OSGL\opensimlauncher\Tests\bin\Debug\Mono.Nat.dll
+D:\work\OSGL\opensimlauncher\Tests\bin\Debug\OSGridLauncher.pdb
+D:\work\OSGL\opensimlauncher\Tests\obj\Debug\ResolveAssemblyReference.cache
+D:\work\OSGL\opensimlauncher\Tests\obj\Debug\Tests.exe
+D:\work\OSGL\opensimlauncher\Tests\obj\Debug\Tests.pdb
